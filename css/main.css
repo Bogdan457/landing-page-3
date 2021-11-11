@@ -1,0 +1,1572 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  button {
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+.content {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+/*==================================================
+Блок 1 header
+====================================================*/
+#header {
+  height: 876px;
+  background: #f5f5f5;
+}
+#nav {
+  display: none;
+  width: 500px;
+  margin-bottom: -42px;
+}
+#nav a {
+  color: black;
+  position: relative;
+  top: -40px;
+  left: 700px;
+  margin-left: 20px;
+}
+#logo {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+#menu { 
+  margin: 0 auto;
+  margin-right: 100px;
+  margin-top: -40px;
+  cursor: pointer;
+  display: block;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: 0;
+}
+#smart1 {
+  color: #fb785a;
+  display: inline;
+  font-size: 45px;
+}
+#smart2 {
+  color: #6b6b6b;
+  display: inline;
+  margin-left: 10px;
+  font-size: 45px;
+}
+#smart {
+  text-align: center;
+  margin-top: 100px;
+}
+#smart-subtext {
+  color: #6b6b6b;
+  max-width: 577px;
+  font-size: 15px;
+  margin: 0 auto;
+  margin-top: 15px; 
+}
+#send-message {
+  background: white;
+  height: 400px;
+  width: 355px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2); /* Параметры тени */
+  margin-left: 200px;
+  margin-top: 150px;
+}
+#send-message-heading {
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+#send-message-heading1 {
+  color: #fb785a;
+  display: inline;
+  font-size: 20px;
+}
+#send-message-heading2 {
+  color: black;
+  display: inline;
+  font-size: 20px;
+  margin-left: 5px;
+}
+#input {
+  border-bottom-color: #6b6b6b;
+  border-bottom-width: 1px;
+  color: #b8b8b8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 280px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+#input1 {
+  border-bottom-color: #6b6b6b;
+  border-bottom-width: 1px;
+  color: #b8b8b8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 280px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+#textarea {
+  border-bottom-color: #6b6b6b;
+  border-bottom-width: 1px;
+  height: 100px;
+  color: #b8b8b8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  width: 280px;
+  margin-bottom: 30px;
+  resize: none;
+  overflow: hidden;
+  font-size: 18px;
+}
+#message-form {
+  margin-top: 70px;
+}
+#button {
+  background: #ff5c36;
+  color: white;
+  width: 240px;
+  border-radius: 100px;
+  height: 50px; 
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  top: -15px;
+}
+/*==================================================
+Блок 2 work procces
+====================================================*/
+#work-procces {
+  height: 740px;
+  width: 100%;
+}
+#working-process {
+  margin-top: 150px;
+  text-align: center;
+}
+#working-process-heading1 {
+  color: #ff5c36;
+  font-size: 45px;
+  display: inline;
+}
+#working-process-heading2 {
+  color: black;
+  font-size: 45px;
+  display: inline;
+  margin-left: 5px;
+}
+#working-process-subtext {
+  color: #6b6b6b;
+  margin-top: -5px;
+  font-size: 18px;
+}
+#work {
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  max-width: 1055px;
+}
+#one-work {
+  width: 230px;
+  height: 230px;
+  background: #4eb2f7;
+  float: left;
+}
+#magnet {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#magnet-heading {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+#magnet-subtext {
+  color: white;
+  font-size: 15px;
+  width: 169px;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: -10px;
+}
+#magnet-button {
+  background: white;
+  color: black;
+  width: 200px;
+  left: 15px;
+  border-radius: 100px;
+  height: 48px; 
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  top: 22px;
+  -webkit-transition: all 1s ease-in-out;
+  opacity: 0;
+}
+#one-work:hover #magnet-button {
+  -webkit-transform: translateY(-20px);
+  opacity: 1;
+}
+#one-work:hover {
+  box-shadow: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */
+}
+#two-work:hover #magnet-button {
+  display: block;
+  box-shadow-bottom: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */ 
+  -webkit-transform: translateY(-20px);
+  opacity: 1;
+}
+#two-work:hover {
+  box-shadow: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */
+}
+#three-work:hover #magnet-button {
+  display: block;
+  box-shadow-bottom: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */ 
+  -webkit-transform: translateY(-20px);
+  opacity: 1;
+}
+#three-work:hover {
+  box-shadow: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */
+}
+#four-work:hover #magnet-button {
+  display: block;
+  box-shadow-bottom: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */ 
+  -webkit-transform: translateY(-20px);
+  opacity: 1;
+}
+#four-work:hover {
+  box-shadow: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */
+}
+#two-work {
+  width: 230px;
+  height: 230px;
+  background: #c049f8;
+  float: left;
+  margin-left: 40px;
+}
+#bug {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#bug-heading {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+#bug-subtext {
+  color: white;
+  font-size: 15px;
+  width: 170px;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: -10px;
+}
+#three-work {
+  width: 230px;
+  height: 230px;
+  background: #817eff;
+  float: left;
+  margin-left: 40px;
+}
+#gears {
+  display: block;
+  margin: 0 auto;
+  margin-top: 34px;
+}
+#four-work {
+  width: 230px;
+  height: 230px;
+  background: #f74770;
+  float: left;
+  margin-left: 40px;
+}
+/*==================================================
+Блок 3 Featured Works
+====================================================*/
+#featured-works {
+  height: 1350px;
+  background: #fbfbfb;
+  margin-top: -100px;
+  width: 100%;
+}
+#featured-works-text {
+  top: 150px;
+  text-align: center;
+  position: relative;
+}
+#apple-watch {
+  max-width: 878px;
+  margin: auto;
+  height: 931px;
+  margin-top: 220px;
+}
+#apple-watch-background {
+  background: #ff5c36;
+  width: 266px;
+  height: 284px;
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+#apple-watch1 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch2 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch3 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch4 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch5 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch6 {
+  opacity: 0;
+  transition: 3s;
+}
+#apple-watch-background:hover #apple-watch1,
+#apple-watch-background:hover #apple-watch2,
+#apple-watch-background:hover #apple-watch3,
+#apple-watch-background:hover #apple-watch4,
+#apple-watch-background:hover #apple-watch5,
+#apple-watch-background:hover #apple-watch6 {
+  opacity: 2;
+  box-shadow: 0 0 48px rgba(0,0,0,0.3); /* Параметры тени */
+  transition: 3s;
+}
+#question-mark1 {
+  background: #c5c7c6;
+  background: linear-gradient(0deg, #c5c7c6, #ededed);
+  width: 266px;
+  height: 284px;
+}
+#question-mark1 img {
+  width: 70px;
+  position: relative;
+  left: 100px;
+  top: 60px;
+  margin-bottom: 20px;
+}
+#apple-watch-heading {
+  color: #ff5c36;
+  display: inline;
+  margin-left: 43px;
+}
+#apple-watch-heading1 {
+  display: inline;
+}
+#apple-watch-subtext {
+  margin-top: -100px;
+  margin-bottom: 130px;
+  text-align: center;
+}
+/*==================================================
+Блок 4 Services
+====================================================*/
+#Services {
+  height: 680px;
+  width: 100%;
+}
+#Services-heading {
+  text-align: center;
+  margin-top: 100px;
+}
+#side-panel {
+  margin-left: 100px;
+  width: 100px;
+  margin-top: -735px;
+}
+#statistics {
+  width: 95px;
+  height: 82px;
+  background: #fbfbfb;
+  border: 2px solid #f7f7f7;
+}
+#statistics img {
+  margin-top: 19px;
+  margin-left: 27px;
+}
+#statistics1 img {
+  margin-top: 10px;
+  margin-left: 22px;
+  height: 80px;
+}
+#statistics1,
+#statistics2,
+#statistics3 {
+  width: 95px;
+  height: 82px;
+  background: #fbfbfb;
+  border: 2px solid #f7f7f7;
+  margin-top: 10px;
+}
+#statistics2 img {
+  margin-top: 19px;
+  margin-left: 12px;
+}
+#statistics3 img {
+  margin-top: 19px;
+  margin-left: 27px;
+}
+#statistics:hover,
+#statistics1:hover,
+#statistics2:hover,
+#statistics3:hover {
+  background: white;
+  border: 2px solid white;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Параметры тени */
+}
+#working-process-heading3 {
+  font-size: 27px;
+  margin-left: 270px;
+  margin-top: 150px;
+}
+#working-process-subtex1 {
+  position: relative;
+  margin-left: 270px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+#working-process-subtex2 {
+  margin-left: 270px;
+  position: relative;
+  font-size: 15px;
+  margin-top: 15px;
+}
+#magnet-button1 {
+  box-shadow: 0px 6px 18px -14px #000000; 
+  background: white;
+  color: black;
+  width: 200px;
+  margin-left: 270px;
+  outline: none;
+  border-radius: 100px;
+  height: 48px; 
+  border: 0;
+  cursor: pointer;
+  margin-top: 35px; 
+}
+#apple-watch-picture {
+  margin: auto;
+  position: relative;
+  width: 360px;
+  top: -360px;
+  margin-right: 100px;
+}
+#line {
+  width: 50px;
+  height: 4px;
+  background: #ff5c36;
+  position: relative;
+  margin: auto;
+  top: -10px;
+  padding: 0;
+  margin-left: 270px;
+}
+/*==================================================
+Блок 5 Team
+====================================================*/
+#team {
+  background: #fbfbfb;
+  width: 100%;
+  height: 900px;
+}
+#team-text {
+  text-align: center;
+  top: 100px;
+  position: relative;
+}
+#ui-ux {
+  background: white;
+  width: 220px;
+  height: 82px;
+  margin: 0 auto;
+  top: 315px;
+  position: relative;
+  box-shadow: 0px 8px 15px -7px rgb(0 0 0 / 10%); /* Параметры тени */
+  -webkit-transition: 3s;
+}
+#ui-ux h1 {
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  margin: 0;
+}
+#ui-ux p {
+  font-size: 12px;
+  text-align: center;
+  color: #6b6b6b;
+  margin: 0;
+  top: 13px;
+  position: relative;
+  -webkit-transition: 6s;
+}
+#bedi {
+  width: 300px;
+  height: 380px;
+  background: #ff5c36;
+  margin-left: 50px;
+  margin-top: 240px;
+  -webkit-transition: 3s;
+}
+#bedi1 {
+  width: 300px;
+  height: 380px;
+  background: #ff5c36;
+  margin: 0 auto;
+  margin-top: -380px;
+  -webkit-transition: 3s;
+}
+#bedi2 {
+  width: 300px;
+  height: 380px;
+  background: #ff5c36;
+  margin: auto;
+  margin-right: 50px;
+  margin-top: -380px;
+  -webkit-transition: 3s;
+}
+#bedi:hover {
+  background: #fff3f0;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Параметры тени */
+  transition: 3s;
+}
+#bedi:hover #ui-ux {
+  background: transparent;
+  box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 10%); /* Параметры тени */
+  top: 265px;
+  transition: 3s;
+}
+#bedi:hover #ui-ux p {
+  color: #ff5c36;
+  transition: 6s;
+}
+#bedi1:hover {
+  background: #fff3f0;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Параметры тени */
+  transition: 3s;
+}
+#bedi1:hover #ui-ux {
+  background: transparent;
+  box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 10%); /* Параметры тени */
+  top: 265px;
+  transition: 3s;
+}
+#bedi1:hover #ui-ux p {
+  color: #ff5c36;
+  transition: 6s;
+}
+#bedi2:hover {
+  background: #fff3f0;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1); /* Параметры тени */
+  transition: 3s;
+}
+#bedi2:hover #ui-ux {
+  background: transparent;
+  box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 10%); /* Параметры тени */
+  top: 265px;
+  transition: 3s;
+}
+#bedi2:hover #ui-ux p {
+  color: #ff5c36;
+  transition: 6s;
+}
+#strip {
+  width: 150px;
+  height: 5px;
+  background: #817f7e;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+#strip-inside,
+#strip-inside2,
+#strip-inside3 {
+  width: 0px;
+  height: 5px;
+  background: #ff5c36;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  margin-top: 0px;
+  float: left;
+  -webkit-transition: 2s;
+}
+#strip-inside-two,
+#strip-inside2-two,
+#strip-inside3-two {
+  width: 0px;
+  height: 5px;
+  background: #ff5c36;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  margin-top: 0px;
+  margin-top: 32px;
+  position: relative;
+  -webkit-transition: 2s;
+}
+#strip-inside-three,
+#strip-inside2-three,
+#strip-inside3-three {
+  width: 0px;
+  height: 5px;
+  background: #ff5c36;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  margin-top: 0px;
+  margin-top: 32px;
+  position: relative;
+  -webkit-transition: 2s;
+}
+#strip-text {
+  text-align: center;
+  font-size: 11px;
+  position: relative;
+  top: 20px;
+  margin-top: 10px;
+  width: 300px;
+  margin-bottom: -7px;
+}
+#strip-subtext {
+  text-align: center;
+  font-size: 11px;
+  position: relative;
+  top: 5px;
+  margin-top: 10px;
+  width: 300px;
+  margin-bottom: -23px;
+}
+#bedi:hover #strip-inside3 {
+  width: 105px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi:hover #strip-inside {
+  width: 115px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi:hover #strip-inside2 {
+  width: 110px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#stripes {
+  opacity: 0;
+  -webkit-transition: 3s;
+  position: relative;
+  top: 10px;
+}
+#social-network {
+  text-align: center;
+  position: relative;
+  top: 120px;
+}
+#stripes:hover {
+  -webkit-transition: 3s;
+}
+#bedi:hover #stripes {
+  opacity: 1;
+}
+#bedi1:hover #strip-inside3-two {
+  width: 105px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi1:hover #strip-inside-two {
+  width: 115px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi1:hover #strip-inside2-two {
+  width: 110px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi1:hover #stripes {
+  opacity: 1;
+}
+#bedi2:hover #strip-inside3-three {
+  width: 105px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi2:hover #strip-inside-three {
+  width: 115px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi2:hover #strip-inside2-three {
+  width: 110px;
+  transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms
+}
+#bedi2:hover #stripes {
+  opacity: 1;
+}
+/*==================================================
+Блок 6 Client
+====================================================*/
+#Client {
+  background: white;
+  width: 100%;
+  height: 650px;
+}
+#ctlient-text {
+  text-align: center;
+  top: 100px;
+  position: relative;
+}
+#clients-said {
+  background: white;
+  width: 500px;
+  height: 230px;
+  border: 1px solid #cecece;
+  margin-top: 250px;
+  margin-left: 60px;
+}
+#clients-said1 {
+  background: white;
+  width: 500px;
+  height: 230px;
+  border: 1px solid #cecece;
+  margin: auto;
+  margin-top: -232px;
+  margin-right: 60px;
+  opacity: 10;
+  z-index: 100;
+}
+#range {
+  width: 85px;
+  height: 85px;
+  background: white;
+  border: 1px solid #cecece;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: -45px;
+}
+#range img {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto;
+  margin-top: 0;
+}
+#range1 {
+  width: 85px;
+  height: 85px;
+  background: white;
+  border: 1px solid #cecece;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: -45px;
+}
+#range1 img {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto;
+  margin-top: 0;
+  border-radius: 100px;
+}
+#clients-said-text {
+  text-align: center;
+  color: #6b6b6b;
+  font-size: 14px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#star {
+  margin: 0 auto;
+  text-align: center;
+}
+#clients-said-name {
+  font-size: 13px;
+  color: #6b6b6b;
+  text-align: center;
+}
+#clients-said1:hover {
+  border: 1px solid white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+#clients-said:hover {
+  border: 1px solid white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+.slides {
+  margin-top: -170px;
+  margin-left: -50px;
+}
+/* Тут начинается наша карусель. Блок .carousel-wrapper спозиционирован относительно, абертки .carousel-item абсолютно.
+. */
+.carousel-wrapper{
+position:relative;
+top: 100px;
+}
+#dot {
+  top: 60px;
+  width: 65px;
+  margin: auto;
+  position: relative;
+}
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #e0e0e0;
+  border-radius: 25%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #ff6e47;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Заметили padding слева и справа по 50px? Таким способом мы можем позиционировать наши ссылки! Каждая будет по 50px шириной. Кроме того, я использую пустые ссылки с фоновым рисунком таким образом, что ссылки выглядят как стрелки. Проверьте, поменяли ли вы URL ссылок с оригинальным URL, чтобы ваши ссылки не были просто прозрачными прямоугольниками. */
+.arrow{
+position:absolute;
+top:0;
+display:block;
+width:50px;
+height:50px;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+background: white;
+border-radius: 200%;
+box-shadow: 0 0 30px rgba(0,0,0,0.1);
+ }
+.arrow:hover{
+position:absolute;
+top:0;
+display:block;
+width:50px;
+height:50px;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+background: #ff6e47;
+border-radius: 200%;
+box-shadow: 0 0 30px rgba(0,0,0,0.1);
+ }
+.arrow-prev p:hover, 
+.arrow-next p:hover {
+color: white;
+ }
+/* Давайте вернем нашу стрелку налево. */
+.arrow-prev{
+left:0;
+margin-top: 80px;
+margin-left: 30px;
+}
+.arrow-prev p {
+text-align: center; color: black;
+margin-top: -3px; font-size: 35px;
+margin-left: -5px
+}
+ 
+/* А вторую направо. Поскольку я использую одно и то же изображение для стрелки, я поворачиваю его на 180 градусов. */
+.arrow-next{
+right:0;
+-webkit-transform:rotate(180deg);
+transform:rotate(180deg);
+margin-top: 80px;
+margin-right: 30px;
+}
+.arrow-next p {
+-webkit-transform:rotate(180deg);
+transform:rotate(180deg);
+text-align: center; color: black;
+margin-top: 5px; font-size: 35px;
+}
+ 
+/* Мне очень нравится, как слайды карусели смотрятся на темном фоне, и если блок .carousel-itemимеет класс 'light',
+мы изменим его текст на белый и используем белые стрелки вместо серых. Проверьте еще раз, правильно ли указан путь к изображению стрелки */
+.light{ 
+color:white;
+ }
+ 
+/* Установим целям для ссылок значение display: none; Таким образом, мы избавляемся от постоянного перепрыгивания браузера в самый верх карусели при каждом нажатии на стрелки. Это свойство действует для любых элементов, чей идентификатор начинается на 'target-item'. */
+[id^="target-item"]{
+display:none;
+}
+ 
+/* Выше мы сделали все наши слайды карусели прозрачными, а это значит, что во время загрузки карусели мы будем получать вместо нее большое пустое поле.
+Изменим значение прозрачности для первого слайда на 1 для отображения. Так же устанавливаем z-index значение 2, позиционируя его выше остальных слайдов. */
+.item-1{
+z-index:2;
+opacity:1;
+margin-left: 45px;
+}
+ 
+/* Но нам не нужно, чтобы первый слайд всегда имел значение прозрачностиopacity: 1; в противном случае нам придется пробираться через этот слайд, во время ротации остальных. */
+*:target~.item-1{ 
+opacity:0;
+}
+ 
+/* ..но если #target-item-1 в фокусе, и мы хотим показать первый слайд, тогда выбираем его с помощью значка ~ и устанавливаем прозрачность опять в 1:-) */
+#target-item-1:target~.item-1{
+opacity:1;
+}
+ 
+/* Если другие target-item-# в фокусе, выбираем их используя ~ селектор, плавно показываем, и размещаем их сверху с помощьюz-index: 3.
+Тут вы можете добавить дополнительные spanс идентификатором target-item, если их у вас будет больше трех. Может сразу и добавить 10 штук.. */
+#target-item-2:target~.item-2,#target-item-3:target~.item-3{
+z-index:3;
+opacity:1;
+}
+/*==================================================
+Блок 7 Block
+====================================================*/
+
+#img img {
+  margin-left: 48px;
+  margin-top: 80px;
+  cursor: pointer;
+}
+#Block {
+  width: 100%;
+  height: 200px;
+  background: #fbfbfb;
+}
+/*==================================================
+Блок 8 footer
+====================================================*/
+footer {
+  width: 100%;
+  height: 250px;
+  background: #f7f7f7;
+}
+#footer-button {
+  background: white;
+  color: black;
+  width: 200px;
+  position: relative;
+  left: 39%;
+  top: 60px;
+  outline: none;
+  border-radius: 100px;
+  height: 48px; 
+  border: 0;
+  cursor: pointer;
+}
+#footer-button:hover {
+  box-shadow: 0px 6px 18px -14px #000000; 
+}
+#network {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background: #d3d3d3;
+  float: left;
+  margin-left: 20px;
+}
+#network:hover {
+  background: #ff9b81;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
+}
+#network1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background: #d3d3d3;
+  float: left;
+  margin-left: 20px;
+}
+#network1:hover {
+  background: #ff9b81;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
+}
+
+#network img {
+  margin-left: 37%;
+  margin-top: 28%;
+}
+#social-network1 {
+  height: 50px;
+  width: 300px;
+  position: relative;
+  top: 100px;
+  margin-left: 300px;
+}
+#footer-tv {
+  margin-left: 15px;
+  margin-top: 17px;
+}
+#footer-cir {
+  margin-left: 14px;
+  margin-top: 15px;
+}
+#be {
+  margin-left: 13px;
+  margin-top: 17px;
+}
+#footer-text {
+  font-size: 15px;
+  max-width: 200px;
+  margin: auto;
+  margin-top: 67px;
+  margin-right: 375px;
+  color: #bfbfbf;
+}
+/*=====================================
+Адапивная верстка
+=======================================*/
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .content {
+    width: 960px;
+  }
+  #work {
+    max-width: 700px;
+  }
+  #three-work,
+  #one-work {
+    margin-left: 100px;
+  }
+  #apple-watch-picture {
+    top: 100px;
+    margin: auto;
+    margin-right: 150px;
+  }
+  #working-process-heading3 {
+    margin-left: 0px;
+    text-align: center;
+  }
+  #line {
+    margin: auto;
+  }
+  #working-process-subtex1,
+  #working-process-subtex2 {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .magnet-button1 {
+    margin: auto;
+    width: 200px;
+  }
+  #magnet-button1 {
+    margin-left: 0px;
+  }
+  #statistics2 {
+    margin-left: 110px;
+    margin-top: -182px;
+  }
+  #statistics3 {
+    margin-left: 110px;
+  }
+  #side-panel {
+    width: 210px;
+    margin-top: -245px;
+    margin-left: 200px;
+  }
+  #bedi {
+    margin-left: 0px;
+  }
+  #bedi2 {
+    margin-right: 0px;
+  }
+  #clients-said {
+    margin: auto;
+    width: 400px;
+    margin-top: 300px;
+  }
+  #clients-said1 {
+    margin: auto;
+    width: 400px;
+    margin-top: 100px;
+  }
+  .arrow-prev {
+    margin-top: 250px;
+    margin-left: 240px;
+  }
+  .arrow-prev {
+    margin-top: 250px;
+    margin-left: 240px;
+  }
+  .arrow-next {
+    margin-top: 250px;
+    margin-right: 240px;
+  }
+  #img {
+    width: 570px;
+    margin: auto;
+    position: relative;
+    top: -55px;
+  }
+  #social-network1 {
+    margin-left: 0;
+    margin: auto;
+  }
+  #footer-text {
+    margin: auto;
+    margin-top: 118px;
+  }
+  #work-procces {
+    height: 820px;
+  }
+  #Client {
+    height: 1000px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .content {
+    width: 720px;
+  }
+  #apple-watch {
+    max-width: 605px;
+    height: 931px;
+    margin: auto;
+    margin-top: 220px;
+  }
+  #apple-watch-picture {
+    top: 100px;
+    margin: auto;
+  }
+  #side-panel {
+    width: 210px;
+    margin: auto;
+    margin-top: 150px;
+  }
+  #bedi {
+    margin: auto;
+    margin-top: 240px;
+  }
+  #bedi1 {
+    margin-top: 70px;
+  }
+  #bedi2 {
+    margin: auto;
+    margin-top: 70px;
+  }
+  #team {
+    height: 1780px; 
+  }
+  #footer-button {
+    left: 35%; 
+  }
+  #featured-works {
+    height: 1900px;
+  }
+  #Services {
+    height: 1400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    width: 540px;
+  }
+  #menu {
+    margin: 0 auto;
+    margin-right: 5px;
+    margin-top: -40px;
+  }
+  #logo {
+    margin-left: 5px;
+  }
+  #send-message {
+    margin-left: 0px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+  #header {
+    height: 960px;
+  }
+  #three-work,
+  #one-work {
+    margin-left: 20px;
+  } 
+  #apple-watch {
+    max-width: 300px;
+  }
+  .arrow-prev,
+  .arrow-next {
+    display: none;
+  }
+  #img {
+    width: 400px;
+    margin: auto;
+    margin-right: 70px;
+  }
+  #footer-button {
+    left: 31%; 
+  }
+  #featured-works {
+    height: 3150px;
+  }
+  #Block {
+    height: 310px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .content {
+    width: 100%;
+  }
+  #header {
+    height: 981px;
+  }
+  #three-work,
+  #one-work {
+    margin-left: 40px;
+  } 
+  #two-work,
+  #four-work {
+    margin-right: 25px;
+  }
+  #work {
+    max-width: 300px;
+  }
+  #apple-watch-picture img {
+    width: 200px;
+  }
+  #apple-watch-picture {
+    width: 200px;
+  }
+  #send-message {
+    width: 290px;
+  }
+  #clients-said,
+  #clients-said1 {
+    width: 78%;
+    padding: 20px;
+  }
+  #img {
+    width: 200px;
+    margin: auto;
+  }
+  #footer-button {
+    left: 28%; 
+  }
+  #featured-works {
+    height: 3430px;
+  }
+  #Services {
+    height: 1300px;
+  }
+  #Client {
+    height: 1100px;
+  }
+  #Block {
+    height: 650px;
+  }
+}
+@media screen and (max-width: 320px) {
+  #img {
+    width: 200px;
+    margin: auto;
+  }
+  #footer-button {
+    left: 21%; 
+  }
+  #Services {
+    height: 1360px;
+  }
+  #featured-works {
+    height: 3560px;
+  }
+  #work-procces {
+    height: 1450px;
+  }
+}
